@@ -36,6 +36,33 @@ comments: true
   height: 110px;
   object-fit: contain;
 }
+.interest-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  margin: 1rem 0 2rem;
+}
+.gallery-item {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(127,127,127,.45);
+  border-radius: 14px;
+  background: rgba(127,127,127,.06);
+}
+.gallery-item img {
+  width: 100%;
+  height: 180px;
+  display: block;
+  object-fit: cover;
+  transition: transform .25s ease;
+}
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+.gallery-item figcaption {
+  padding: .8rem 1rem;
+  font-weight: 600;
+}
 </style>
 
 <section class="about-hero">
@@ -53,6 +80,37 @@ comments: true
   <article class="about-card"><h3>Photography</h3><p>Through AP 2D Art and Design, I explored how people can overlook the nature and beauty near their own homes while searching for it somewhere far away.</p></article>
   <article class="about-card"><h3>Gaming</h3><p>Gaming is one of the ways I relax and spend time with friends. It also makes me curious about the systems, rules, and code behind interactive experiences.</p></article>
   <article class="about-card"><h3>Academics</h3><p>My current STEM coursework includes AP Biology, AP Physics C: Mechanics, AP Calculus BC, and AP Computer Science Principles.</p></article>
+</div>
+
+## A Few Things That Represent Me
+
+These images connect my interests to projects and tools already inside this portfolio.
+
+<div class="interest-gallery">
+  <figure class="gallery-item">
+    <img src="{{ '/images/gamify/robot.png' | relative_url }}" alt="Robot character representing engineering and building" loading="lazy">
+    <figcaption>Engineering and robotics</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="{{ '/images/tools/vscode.png' | relative_url }}" alt="Visual Studio Code interface representing programming" loading="lazy">
+    <figcaption>Coding with VS Code</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="{{ '/images/gamebuilder/sprites/astro.png' | relative_url }}" alt="Astronaut character representing aerospace interests" loading="lazy">
+    <figcaption>Aerospace and exploration</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="{{ '/images/gamify/bg/reef.png' | relative_url }}" alt="Colorful underwater reef representing nature photography" loading="lazy">
+    <figcaption>Nature and photography</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="{{ '/images/gamify/retrocity.jpg' | relative_url }}" alt="Retro game city representing gaming and interactive design" loading="lazy">
+    <figcaption>Gaming and interactive design</figcaption>
+  </figure>
+  <figure class="gallery-item">
+    <img src="{{ '/images/gamify/dnhs.png' | relative_url }}" alt="Del Norte High School image representing school life" loading="lazy">
+    <figcaption>School and learning</figcaption>
+  </figure>
 </div>
 
 ## Background
