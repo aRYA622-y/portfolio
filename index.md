@@ -1,85 +1,115 @@
 ---
-layout: post 
-title: Portfolio Home 
+layout: post
+title: Portfolio Home
 hide: true
 show_reading_time: false
 ---
 
-Hi! My name is [Your Full Name]
+<style>
+.portfolio-hero {
+  padding: 2rem;
+  margin: 1rem 0 2rem;
+  border: 1px solid #4f8cff;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(79,140,255,.18), rgba(123,97,255,.10));
+}
+.portfolio-links {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin: 1rem 0 2rem;
+}
+.portfolio-card {
+  display: block;
+  padding: 1rem;
+  border: 1px solid rgba(127,127,127,.45);
+  border-radius: 12px;
+  text-decoration: none;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.portfolio-card:hover, .portfolio-card:focus {
+  transform: translateY(-3px);
+  border-color: #4f8cff;
+}
+.portfolio-card strong {
+  display: block;
+  margin-bottom: .35rem;
+}
+</style>
 
-### Development Environment
+<section class="portfolio-hero">
+  <p>AP Computer Science Principles Portfolio</p>
+  <h1>Arya Taghavi Zargar</h1>
+  <p>I am a Del Norte High School student interested in electrical engineering, aerospace engineering, programming, tennis, gaming, and photography. This portfolio documents what I build, the problems I encounter, and how my skills improve through each sprint.</p>
+</section>
 
+## Onboarding Challenge: Ground 0
 
-> Coding starts with tools, explore these tools and procedures with a click.
+My Ground 0 work connects three parts of the onboarding sprint into one workflow:
 
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <a href="https://opencodingsociety.com" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #FA8072; border-radius: 6px; font-weight: 700; transition: all 0.3s;">
-        <img src="{{ '/favicon.ico' | relative_url }}" alt="OCS logo" style="width: 16px; height: 16px;">
-        OCS
-    </a>
-    <a href="https://github.com/Open-Coding-Society/portfolio" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #FFF; border-radius: 6px; font-weight: 700; transition: all 0.3s;">
-        <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/>
-        </svg>
-        GitHub
-    </a>
-    <a href="https://vscode.dev/" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 10px 14px; border: 1px solid #007ACC; border-radius: 6px; font-weight: 700; transition: all 0.3s;">
-        <svg style="width: 16px; height: 16px; fill: currentColor;" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.34 0L5.66 5.39l-2.4-1.8L1.19 4.82v6.36l2.07 1.23 2.4-1.8L11.34 16 15 14.23V1.77L11.34 0zm.59 11.57l-3.86-3.54 3.86-3.54v7.08z"/>
-        </svg>
-        VSCode.dev
-    </a>
+1. [Tools and Equipment Setup](https://pages.opencodingsociety.com/tools/csp/)
+2. [GitHub Pages About Page](https://pages.opencodingsociety.com/github/pages/about/csp/) and [GitHub Pages Home Page](https://pages.opencodingsociety.com/github/pages/csp/)
+3. [Onboarding Challenge - Ground 0](https://pages.opencodingsociety.com/sprint1/challenge/csp/)
+
+The setup work gives me a working development environment, GitHub Pages publishes my work, and Ground 0 helps me reflect on the evidence, rankings, teamwork, and skills I still need to improve.
+
+<div class="portfolio-links">
+  <a class="portfolio-card" href="{{ '/about/' | relative_url }}">
+    <strong>About Me</strong>
+    Learn about my interests, background, goals, and the experiences that influence my work.
+  </a>
+  <a class="portfolio-card" href="https://github.com/aRYA622-y/portfolio">
+    <strong>Portfolio Repository</strong>
+    View the source files, commit history, issues, and GitHub Pages workflow for this site.
+  </a>
+  <a class="portfolio-card" href="https://github.com/ruhaanb622/portfolio">
+    <strong>Ruhaan's Portfolio</strong>
+    Visit one teammate's repository and compare our onboarding progress and evidence.
+  </a>
 </div>
 
-<br>
+## Development Environment
 
-### My Lessons
-
-> Foundations in Tech are essential, click to see some of my lesson creations.
-
-
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <a href="{{site.baseurl}}/code/javascript" style="text-decoration: none;">
-        <div style="background-color: var(--green); color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
-           JS Basics
-        </div>
-    </a>
-    <a href="{{site.baseurl}}/game/essentials/variables" style="text-decoration: none;">
-        <div style="background-color: var(--blue); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
-           JS Variables
-        </div>
-    </a>
-    <a href="{{site.baseurl}}/gamerunner" style="text-decoration: none;">
-        <div style="background-color: var(--warn); color: black; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
-           Gamerunner
-        </div>
-    </a>
-    <a href="{{site.baseurl}}/network/stack" style="text-decoration: none;">
-        <div style="background-color: var(--orange); color: white; padding: 10px 20px; border-radius: 5px; font-weight: bold; transition: transform 0.2s, box-shadow 0.2s;">
-           Networking
-        </div>
-    </a>
+<div class="portfolio-links">
+  <a class="portfolio-card" href="https://opencodingsociety.com">
+    <strong>Open Coding Society</strong>
+    Course resources, challenges, and technical references.
+  </a>
+  <a class="portfolio-card" href="https://github.com/aRYA622-y/portfolio">
+    <strong>GitHub</strong>
+    Version control, issues, commits, Actions, and Pages deployment.
+  </a>
+  <a class="portfolio-card" href="https://vscode.dev/">
+    <strong>VS Code</strong>
+    My main environment for editing, testing, and organizing code.
+  </a>
 </div>
 
-<br>
+## GitHub Pages Learning
 
-### Class Progress
+These resources explain the parts that turn repository files into a published portfolio. I included them so I can move from editing a template to understanding how the site is organized and deployed.
 
-> Here is my game progress through coding, click to see these in the browser
-
-<div style="display: flex; flex-wrap: wrap; gap: 10px;">
-    <a href="{{site.baseurl}}/snake" class="btn">
-        Snake
-    </a>
-    <a href="{{site.baseurl}}/gamify/parallax" class="btn" style="background-color: var(--green); ">
-        Fish
-    </a>
-    <a href="{{site.baseurl}}/gamify" class="btn" style="background-color: var(--teal);">
-       Gamify
-    </a>
-    <a href="{{site.baseurl}}/cs-pathway" class="btn" style="background-color: var(--orange);">
-       CS Pathway
-    </a>
+<div class="portfolio-links">
+  <a class="portfolio-card" href="https://pages.opencodingsociety.com/github/pages/csp/"><strong>Pages Home</strong>Build and personalize the main portfolio page.</a>
+  <a class="portfolio-card" href="https://pages.opencodingsociety.com/github/pages/about/csp/"><strong>About Page</strong>Use Markdown, HTML, CSS, and JavaScript to introduce myself.</a>
+  <a class="portfolio-card" href="https://pages.opencodingsociety.com/tools/csp/"><strong>Tools</strong>Set up the editor, terminal, Git, and course workflow.</a>
+  <a class="portfolio-card" href="https://pages.opencodingsociety.com/sprint1/challenge/csp/"><strong>Ground 0</strong>Connect evidence, reflection, teamwork, and next steps.</a>
 </div>
 
-<br>
+## Lessons and Projects
+
+<div class="portfolio-links">
+  <a class="portfolio-card" href="{{ '/code/javascript' | relative_url }}"><strong>JavaScript Basics</strong>Practice the core syntax used for interactive pages.</a>
+  <a class="portfolio-card" href="{{ '/game/essentials/variables' | relative_url }}"><strong>Variables</strong>Explore how programs store and update information.</a>
+  <a class="portfolio-card" href="{{ '/gamerunner' | relative_url }}"><strong>Game Runner</strong>Test programs in a browser-based environment.</a>
+  <a class="portfolio-card" href="{{ '/network/stack' | relative_url }}"><strong>Networking</strong>Study how information moves between systems.</a>
+</div>
+
+## Class Progress
+
+<div class="portfolio-links">
+  <a class="portfolio-card" href="{{ '/snake' | relative_url }}"><strong>Snake</strong>A browser game demonstrating logic and interaction.</a>
+  <a class="portfolio-card" href="{{ '/gamify/parallax' | relative_url }}"><strong>Fish</strong>A visual project using movement and layered design.</a>
+  <a class="portfolio-card" href="{{ '/gamify' | relative_url }}"><strong>Gamify</strong>Course concepts presented through interactive challenges.</a>
+  <a class="portfolio-card" href="{{ '/cs-pathway' | relative_url }}"><strong>CS Pathway</strong>My progress through computer science topics.</a>
+</div>
