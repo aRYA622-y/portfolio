@@ -1,138 +1,104 @@
 ---
 layout: post
-title: About
+title: About Arya
 permalink: /about/
 comments: true
 ---
 
-## As a conversation Starter
-
-Here are some places I have lived.
-
-<comment>
-Flags are made using Wikipedia images
-</comment>
-
 <style>
-    /* Style looks pretty compact, 
-       - grid-container and grid-item are referenced the code 
-    */
-    .grid-container {
-        display: grid;
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Dynamic columns */
-        gap: 10px;
-    }
-    .grid-item {
-        text-align: center;
-    }
-    .grid-item img {
-        width: 100%;
-        height: 100px; /* Fixed height for uniformity */
-        object-fit: contain; /* Ensure the image fits within the fixed height */
-    }
-    .grid-item p {
-        margin: 5px 0; /* Add some margin for spacing */
-    }
-
-    .image-gallery {
-        display: flex;
-        flex-wrap: nowrap;
-        overflow-x: auto;
-        gap: 10px;
-        }
-
-    .image-gallery img {
-        max-height: 150px;
-        object-fit: cover;
-        border-radius: 5px;
-    }
+.about-hero {
+  padding: 2rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba(79,140,255,.18), rgba(123,97,255,.10));
+  border: 1px solid #4f8cff;
+  margin-bottom: 1.5rem;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+  margin: 1rem 0 2rem;
+}
+.about-card {
+  padding: 1rem;
+  border: 1px solid rgba(127,127,127,.45);
+  border-radius: 12px;
+  transition: transform .2s ease, border-color .2s ease;
+}
+.about-card:hover, .about-card:focus-within {
+  transform: translateY(-3px);
+  border-color: #4f8cff;
+}
+.about-card h3 { margin-top: 0; }
+.place-card { text-align: center; }
+.place-card img {
+  width: 100%;
+  height: 110px;
+  object-fit: contain;
+}
 </style>
 
-<!-- This grid_container class is used by CSS styling and the id is used by JavaScript connection -->
-<div class="grid-container" id="grid_container">
-    <!-- content will be added here by JavaScript -->
+<section class="about-hero">
+  <p>Student, developer, athlete, and creator</p>
+  <h1>Hi, I am Arya.</h1>
+  <p>I am a junior at Del Norte High School. I enjoy solving problems with math, science, engineering, and code, especially when I can connect an idea to something I can build and test.</p>
+</section>
+
+## My Interests
+
+<div class="about-grid">
+  <article class="about-card"><h3>Engineering</h3><p>I am interested in electrical and aerospace engineering. I like understanding how systems work and using math and physics to design practical solutions.</p></article>
+  <article class="about-card"><h3>Computer Science</h3><p>I am developing my skills with GitHub, VS Code, Markdown, HTML, CSS, JavaScript, and Python. My goal is to become more independent at testing and debugging.</p></article>
+  <article class="about-card"><h3>Tennis</h3><p>Tennis has taught me persistence and adaptation. I played JV and finished a season with only one loss across 22 matches, and I am working toward varsity.</p></article>
+  <article class="about-card"><h3>Photography</h3><p>Through AP 2D Art and Design, I explored how people can overlook the nature and beauty near their own homes while searching for it somewhere far away.</p></article>
+  <article class="about-card"><h3>Gaming</h3><p>Gaming is one of the ways I relax and spend time with friends. It also makes me curious about the systems, rules, and code behind interactive experiences.</p></article>
+  <article class="about-card"><h3>Academics</h3><p>My current STEM coursework includes AP Biology, AP Physics C: Mechanics, AP Calculus BC, and AP Computer Science Principles.</p></article>
 </div>
+
+## Background
+
+My family is from Iran, and I have grown up in San Diego. Both are important parts of my identity. The interactive cards below are generated with JavaScript from a small data array, connecting personal information to the coding skills used in this portfolio.
+
+<div class="about-grid" id="place-grid" aria-live="polite"></div>
 
 <script>
-    // 1. Make a connection to the HTML container defined in the HTML div
-    var container = document.getElementById("grid_container"); // This container connects to the HTML div
+const places = [
+  {
+    name: "California",
+    detail: "The place I call home and where I attend school.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg"
+  },
+  {
+    name: "Iran",
+    detail: "My family's culture and heritage.",
+    image: "https://upload.wikimedia.org/wikipedia/commons/c/ca/Flag_of_Iran.svg"
+  }
+];
 
-    // 2. Define a JavaScript object for our http source and our data rows for the Living in the World grid
-    var http_source = "https://upload.wikimedia.org/wikipedia/commons/";
-    var living_in_the_world = [
-        {"flag": "0/01/Flag_of_California.svg", "greeting": "Hey", "description": "California - forever"},
-        {"flag": "b/b9/Flag_of_Oregon.svg", "greeting": "Hi", "description": "Oregon - 9 years"},
-        {"flag": "b/be/Flag_of_England.svg", "greeting": "Alright mate", "description": "England - 2 years"},
-        {"flag": "e/ef/Flag_of_Hawaii.svg", "greeting": "Aloha", "description": "Hawaii - 2 years"},
-    ];
+const placeGrid = document.getElementById("place-grid");
 
-    // 3a. Consider how to update style count for size of container
-    // The grid-template-columns has been defined as dynamic with auto-fill and minmax
+places.forEach((place) => {
+  const card = document.createElement("article");
+  card.className = "about-card place-card";
 
-    // 3b. Build grid items inside of our container for each row of data
-    for (const location of living_in_the_world) {
-        // Create a "div" with "class grid-item" for each row
-        var gridItem = document.createElement("div");
-        gridItem.className = "grid-item";  // This class name connects the gridItem to the CSS style elements
-        // Add "img" HTML tag for the flag
-        var img = document.createElement("img");
-        img.src = http_source + location.flag; // concatenate the source and flag
-        img.alt = location.flag + " Flag"; // add alt text for accessibility
+  const image = document.createElement("img");
+  image.src = place.image;
+  image.alt = `${place.name} flag`;
+  image.loading = "lazy";
 
-        // Add "p" HTML tag for the description
-        var description = document.createElement("p");
-        description.textContent = location.description; // extract the description
+  const title = document.createElement("h3");
+  title.textContent = place.name;
 
-        // Add "p" HTML tag for the greeting
-        var greeting = document.createElement("p");
-        greeting.textContent = location.greeting;  // extract the greeting
+  const description = document.createElement("p");
+  description.textContent = place.detail;
 
-        // Append img and p HTML tags to the grid item DIV
-        gridItem.appendChild(img);
-        gridItem.appendChild(description);
-        gridItem.appendChild(greeting);
-
-        // Append the grid item DIV to the container DIV
-        container.appendChild(gridItem);
-    }
+  card.append(image, title, description);
+  placeGrid.appendChild(card);
+});
 </script>
 
-### Journey through Life
+## What I Am Working Toward
 
-Here is what I did at those places
+I want to improve at turning ideas into tested programs, documenting mistakes instead of hiding them, and contributing consistently to a team workflow. During Ground 0, I am building a foundation with my development tools, GitHub workflow, Pages portfolio, and sprint reflection.
 
-- 🏫 Lots of Elementary Schools in Tucson, LA, Honolulu, and Glendale (CA)
-- 🏫 Middle and High School in Glendale (CA), Hoover High graduated '77
-- 🎓 Glendale CA Community College, UCLA Extension, LA Wilshire Computer Tech School '77 to '79
-- ⛪ England, London Missionary for Church of Jesus Christ of Latter-day Saints '79 to '81
-- 💼 Culver City, Glendale CA founder at Ashton-Tate, original PC's dBase 2 and 3 '82 to '87
-- 🎓 Eugene Oregon Undergraduate CompSci Degree at University of Oregon (Go Ducks!) '89 to '91
-- 💼 Eugene Oregon, founder and owner @ Microniche `88, Point Control CAD CAM developer '91 to '96
-- 🏢 San Diego CA Qualcomm, Satellite Comm and 1st Mobile OS (BREW) '96 to '19
-- 👨‍🏫 San Diego CA Teacher of Computer Science @ Del Norte High School San Diego '19 to present
-
-### Culture, Family, and Fun
-
-Everything for me, as for many others, revolves around family and faith.
-
-- My mother told me that I was Danish, English. and Irish, here is my researched [family tree]({{site.baseurl}}/images/about/familytree.png)
-- My family is pretty big as I have been married twice, my 1st wife passed away.  We have had 5 kids, 4 adopted by me, 1 biological.  Plus, there are three grandkids.  My name to my grandkids is Abuilito.
-- The gallery of pics has some of my family, fun, culture and faith memories.
-
-<comment>
-Gallery of Pics, scroll to the right for more ...
-</comment>
-<div class="image-gallery">
-  <img src="{{site.baseurl}}/images/about/missionary.jpg" alt="Image 1">
-  <img src="{{site.baseurl}}/images/about/john_tamara.jpg" alt="Image 2">
-  <img src="{{site.baseurl}}/images/about/tamara_fam.jpg" alt="Image 3">
-  <img src="{{site.baseurl}}/images/about/surf.jpg" alt="Image 4">
-  <img src="{{site.baseurl}}/images/about/john_lora.jpg" alt="Image 5">
-  <img src="{{site.baseurl}}/images/about/lora_fam.jpg" alt="Image 6">
-  <img src="{{site.baseurl}}/images/about/lora_fam2.jpg" alt="Image 7">
-  <img src="{{site.baseurl}}/images/about/pj_party.jpg" alt="Image 8">
-  <img src="{{site.baseurl}}/images/about/trent_family.png" alt="Image 9">
-  <img src="{{site.baseurl}}/images/about/claire.jpg" alt="Image 10">
-  <img src="{{site.baseurl}}/images/about/grandkids.jpg" alt="Image 11">
-  <img src="{{site.baseurl}}/images/about/farm.jpg" alt="Image 12">
-</div>
+My strongest self-ranked areas are attendance and timeliness, while learning through mistakes and help seeking are also developing strengths. My lower technical rankings show that I am still early in this course, especially with VS Code, portfolio development, layout, JavaScript challenges, and technical communication. These scores are a starting point, not a final result, and I will use future commits and issues to show improvement.
