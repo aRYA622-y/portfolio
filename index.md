@@ -40,8 +40,8 @@ show_reading_time: false
 <section class="portfolio-hero">
   <p>AP Computer Science Principles Portfolio</p>
   <h1>Arya Taghavi Zargar</h1>
-  <p>I am a Del Nortexxx
-   High School student interested in electrical engineering, aerospace engineering, programming, tennis, gaming, and photography. This portfolio documents what I build, the problems I encounter, and how my skills improve through each sprint.</p>
+  <p>I am a Del Norte
+   High School student who likes video games interested in electrical engineering, aerospace engineering, programming, tennis, gaming, and photography. This portfolio documents what I build, the problems I encounter, and how my skills improve through each sprint.</p>
 </section>
 
 ## Onboarding Challenge: Ground 0
