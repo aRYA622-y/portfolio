@@ -63,6 +63,40 @@ comments: true
   padding: .8rem 1rem;
   font-weight: 600;
 }
+.personal-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 16px;
+  margin: 1rem 0 2rem;
+}
+.personal-photo {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(127,127,127,.45);
+  border-radius: 14px;
+  background: rgba(127,127,127,.06);
+}
+.personal-photo a {
+  display: block;
+  overflow: hidden;
+}
+.personal-photo img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .25s ease;
+}
+.personal-photo:hover img,
+.personal-photo:focus-within img {
+  transform: scale(1.03);
+}
+.personal-photo figcaption {
+  padding: .8rem 1rem;
+  font-weight: 600;
+  text-align: center;
+}
 </style>
 
 <section class="about-hero">
@@ -70,6 +104,37 @@ comments: true
   <h1>Hi, I am Arya.</h1>
   <p>I am a junior at Del Norte High School. I enjoy solving problems with math, science, engineering, and code, especially when I can connect an idea to something I can build and test.</p>
 </section>
+
+## Photo Gallery
+
+A few moments with me, my friends, and my family. Select a photo to open a larger version.
+
+<div class="personal-gallery">
+  <figure class="personal-photo">
+    <a href="{{ '/images/about/arya-portrait.jpg' | relative_url }}" aria-label="Open Arya portrait">
+      <img src="{{ '/images/about/arya-portrait.jpg' | relative_url }}" alt="Portrait of Arya" loading="lazy">
+    </a>
+    <figcaption>Portrait</figcaption>
+  </figure>
+  <figure class="personal-photo">
+    <a href="{{ '/images/about/arya-outing.jpg' | relative_url }}" aria-label="Open Arya outing photo">
+      <img src="{{ '/images/about/arya-outing.jpg' | relative_url }}" alt="Arya during an outing" loading="lazy">
+    </a>
+    <figcaption>Outing</figcaption>
+  </figure>
+  <figure class="personal-photo">
+    <a href="{{ '/images/about/arya-friends.jpg' | relative_url }}" aria-label="Open friends photo">
+      <img src="{{ '/images/about/arya-friends.jpg' | relative_url }}" alt="Arya with friends" loading="lazy">
+    </a>
+    <figcaption>Friends</figcaption>
+  </figure>
+  <figure class="personal-photo">
+    <a href="{{ '/images/about/arya-family.jpg' | relative_url }}" aria-label="Open family photo">
+      <img src="{{ '/images/about/arya-family.jpg' | relative_url }}" alt="Arya with family" loading="lazy">
+    </a>
+    <figcaption>Family</figcaption>
+  </figure>
+</div>
 
 ## My Interests
 
