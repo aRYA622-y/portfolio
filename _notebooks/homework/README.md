@@ -1,11 +1,13 @@
-# Period 3 and 4 homework — Arya
+# Period 3 and 4 nonprofit homework — Arya
 
-This folder contains 18 AP CSP practice notebooks: 12 Python topics and 6 SASS topics. Every notebook includes popcorn hacks, homework exercises, and an explanation where applicable.
+This folder contains 18 original practice notebooks, each with the applicable popcorn hacks and homework hacks, applying AP CSP and SASS concepts to nonprofit-related examples.
 
-## Python
-Variables; Data Abstractions; Math Expressions; Strings; Boolean Expressions; Nested Conditionals; Iterations; Developing Algorithms; Lists; Calling Procedures; Random Values; Algorithmic Efficiency.
+- **MyGoodBrain:** SASS Buttons (resource toolbar, check-in buttons).
+- **PVO:** SASS Inputs, SASS Toggles, Nested Conditionals, Calling Procedures.
+- **Poway Rotary:** SASS Containers (community parade volunteer hub).
+- **Safe Passage Heals:** Strings, Iterations, Developing Algorithms, Lists (nonprofit outreach and distribution).
+- **Poway Recovery Center:** Math Expressions (program capacity and cost).
+- **SFI Foundation:** Boolean Expressions and Random Values (safety-specification validation and simulated QA).
+- **Nonprofit education and community outreach:** Variables, Data Abstractions, Algorithmic Efficiency, SASS Grids and SASS Typography.
 
-## SASS
-Typography; Containers; Grids; Inputs; Toggles; Buttons.
-
-The notebooks are marked with the Jekyll category `HW` and have distinct `/arya/hw/...` permalinks. Python examples contain assertions for selected deterministic cases; SASS examples should be previewed in the deployed portfolio with its OCS stylesheet. Match the practice examples against the exact assignment rubric before submitting them as personal coursework.
+The code is an original educational demonstration, not a real nonprofit database or a production application. The nonprofit-themed numerical inputs are illustrative, not verified organizational statistics. Preview interactive HTML examples in the portfolio's OCS UI runner, and compare each submission with the assigned rubric.
