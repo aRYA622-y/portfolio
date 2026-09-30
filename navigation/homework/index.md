@@ -31,6 +31,6 @@ Current lesson audit: September 30, 2026. Each notebook contains the lesson-spec
 
 Math Expressions currently returns 404. Its datasets were aligned to the cached assignment, but a newer revision could not be verified.
 
-Validation: 48 Python cells executed successfully with assertions and saved output. HTML markup was inspected against the required class/tag rules; browser rendering remains a separate check. MCQ answer reviews are not claimed classroom scores.
+Validation: 48 Python cells executed successfully with assertions and saved output. All six SASS pages render on the deployed site; all 16 HTML cells passed marker/style checks. Button feedback and the toggle count were checked in the browser. MCQ answer reviews are not claimed classroom scores.
 
 [Period 4 microblogs]({{ "/arya/period4-microblogs/" | relative_url }})
